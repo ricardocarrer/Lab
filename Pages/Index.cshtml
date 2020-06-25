@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<form method="Post">
+
+    <input type="text" name="nome" />
+
+    <input type="submit" value="Qual seu nome?" asp-page-handler="Nome"/>
+
+
+    Meu nome é: @Model.Nome
+
+</form>
+
+
+<form method="Post">
+
+    <input type="text" name="nome" />
+
+    <input type="submit" value="Qual seu sobrenome?" asp-page-handler="Sobrenome" />
+
+
+    Meu sobrenome é: @Model.Sobrenome
+
+</form>
