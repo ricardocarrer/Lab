@@ -10,6 +10,7 @@ namespace Lab.Pages
 {
     public class IndexModel : PageModel
     {
+        //public Usuario _Usuario { get; set; }
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -19,20 +20,24 @@ namespace Lab.Pages
 
         public void OnGet()
         {
-
         }
 
         
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
-        public void OnPostNome()
+        public void OnPostNome(string nome)
         {
-            Nome = Request.Form["nome"].ToString();
+            Nome = nome;
         }
 
-        public void OnPostSobrenome()
+        public void OnPostSobrenome(Usuario u)
         {
-            Sobrenome = Request.Form["nome"].ToString();
+            Sobrenome = u.Sobrenome;
         }
+    }
+
+    public class Usuario {
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
     }
 }
